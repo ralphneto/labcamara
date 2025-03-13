@@ -44,14 +44,14 @@ type
     lbPressao1: TLabel;
     lbPressao2: TLabel;
     lbNivel: TLabel;
-    lbCel1: TLabel;
-    lbCel2: TLabel;
+    lbVol1: TLabel;
+    lbVol2: TLabel;
     edUmid: TEdit;
     edPressao1: TEdit;
     edPressao2: TEdit;
     edNivel: TEdit;
-    edCel1: TEdit;
-    edCel2: TEdit;
+    edVol1: TEdit;
+    edVol2: TEdit;
     bbAbrirEnsaio: TBitBtn;
     GroupBox1: TGroupBox;
     Label3: TLabel;
@@ -262,7 +262,7 @@ begin
         end
         else
         begin
-                edCel1.Text := IntToStr(dataValue);
+                edVol1.Text := IntToStr(dataValue);
         end;
 
         if (cbAIn(0, chCel2, BIP5VOLTS, dataValue) <> 0) then
@@ -272,7 +272,7 @@ begin
         end
         else
         begin
-                edCel2.Text := IntToStr(dataValue);
+                edVol2.Text := IntToStr(dataValue);
         end;
 
         cbDBitIn(0, AUXPORT, bitChEmergencia, bitValue);

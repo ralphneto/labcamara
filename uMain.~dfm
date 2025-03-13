@@ -1,6 +1,6 @@
 object frmMain: TfrmMain
-  Left = 170
-  Top = 64
+  Left = 220
+  Top = 74
   BorderStyle = bsSingle
   Caption = 
     'Câmara de ensaios de capacidade de refrigeração e eficiência ene' +
@@ -302,12 +302,12 @@ object frmMain: TfrmMain
         Font.Style = [fsBold]
         ParentFont = False
       end
-      object lbCel1: TLabel
+      object lbVol1: TLabel
         Left = 16
         Top = 160
-        Width = 106
+        Width = 108
         Height = 13
-        Caption = 'Celula de Carga 1:'
+        Caption = 'Volume de Água 1:'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlue
         Font.Height = -11
@@ -315,12 +315,12 @@ object frmMain: TfrmMain
         Font.Style = [fsBold]
         ParentFont = False
       end
-      object lbCel2: TLabel
+      object lbVol2: TLabel
         Left = 16
         Top = 192
-        Width = 106
+        Width = 108
         Height = 13
-        Caption = 'Célula de Carga 2:'
+        Caption = 'Volume de Água 2:'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlue
         Font.Height = -11
@@ -360,7 +360,7 @@ object frmMain: TfrmMain
         Color = clSilver
         TabOrder = 3
       end
-      object edCel1: TEdit
+      object edVol1: TEdit
         Left = 160
         Top = 152
         Width = 65
@@ -368,7 +368,7 @@ object frmMain: TfrmMain
         Color = clSilver
         TabOrder = 4
       end
-      object edCel2: TEdit
+      object edVol2: TEdit
         Left = 160
         Top = 184
         Width = 65
