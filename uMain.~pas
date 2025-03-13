@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  ExtCtrls, StdCtrls, Menus, CBW32, Buttons;
+  ExtCtrls, StdCtrls, Menus, CBW32, Buttons, constantes;
 
 type
   TfrmMain = class(TForm)
@@ -54,7 +54,6 @@ type
     edVol2: TEdit;
     bbAbrirEnsaio: TBitBtn;
     GroupBox1: TGroupBox;
-    Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
     Label6: TLabel;
@@ -67,58 +66,42 @@ type
     lbChaveEmergencia: TLabel;
     ledEmergenciaOff: TImage;
     ledEmergenciaOn: TImage;
+    lbPressaoCompressor: TLabel;
+    ledPressaoCompressorOff: TImage;
+    ledPressaoCompressorOn: TImage;
+    gbEnergia: TGroupBox;
+    lbMedidor1: TLabel;
+    lbMedidor2: TLabel;
+    lbVAC: TLabel;
+    lbCorrenteA: TLabel;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit7: TEdit;
+    Edit8: TEdit;
+    lbKWH: TLabel;
+    Edit1: TEdit;
+    Edit9: TEdit;
     procedure FormCreate(Sender: TObject);
     procedure tmrMainReadTimer(Sender: TObject);
+    procedure Diagnstico1Click(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
   end;
 
-const
-        chTI1           = 15;
-        chTI2           = 7;
-        chTI3           = 14;
-        chTI4           = 8;
-        chTAS1          = 13;
-        chTAS2          = 5;
-        chTAE1          = 12;
-        chTAE2          = 4;
-        chTTanque       = 6;
-        chUmid          = 0;
-        chCel1          = 1;
-        chCel2          = 9;
-        chPressao1      = 2;
-        chPressao2      = 10;
-        chNivel         = 3;
-        bitChEmergencia = 0;
-        bitPorta        = 1;
-
 var
   frmMain: TfrmMain;
 
 implementation
 
+uses uUtils, uDiagnostico;
+
 {$R *.DFM}
 
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
-        //Configura bits 0 a 3, Board 0 como entrada
-        cbDConfigBit(0, AUXPORT, 0, DIGITALIN);
-        cbDConfigBit(0, AUXPORT, 1, DIGITALIN);
-        cbDConfigBit(0, AUXPORT, 2, DIGITALIN);
-        cbDConfigBit(0, AUXPORT, 3, DIGITALIN);
-
-        //Configura bits 4 a 7, Board 0 como saida
-        if cbDConfigBit(0, AUXPORT, 4, DIGITALOUT) <> 0 then
-                ShowMessage('Erro configurando Bit 4 como saída!');
-        if cbDConfigBit(0, AUXPORT, 5, DIGITALOUT) <> 0 then
-                ShowMessage('Erro configurando Bit 5 como sa?da!');
-        if cbDConfigBit(0, AUXPORT, 6, DIGITALOUT) <> 0 then
-                ShowMessage('Erro configurando Bit 6 como sa?da!');
-        if cbDConfigBit(0, AUXPORT, 7, DIGITALOUT) <> 0 then
-                ShowMessage('Erro configurando Bit 7 como sa?da!');
-
+        frmUtils.ConfigurarEntradasESaidas;
 end;
 
 procedure TfrmMain.tmrMainReadTimer(Sender: TObject);
@@ -262,7 +245,7 @@ begin
         end
         else
         begin
-                edCel1.Text := IntToStr(dataValue);
+                edVol1.Text := IntToStr(dataValue);
         end;
 
         if (cbAIn(0, chCel2, BIP5VOLTS, dataValue) <> 0) then
@@ -272,10 +255,10 @@ begin
         end
         else
         begin
-                edCel2.Text := IntToStr(dataValue);
+                edVol2.Text := IntToStr(dataValue);
         end;
 
-        cbDBitIn(0, AUXPORT, bitChEmergencia, bitValue);
+        cbDBitIn(0, AUXPORT, bitChEmergenciaIn, bitValue);
         if (bitValue) = 1 then
         begin
                 ledEmergenciaOff.Visible := true;
@@ -287,7 +270,7 @@ begin
                 ledEmergenciaOn.Visible := true;
         end;
 
-        cbDBitIn(0, AUXPORT, bitPorta, bitValue);
+        cbDBitIn(0, AUXPORT, bitPortaIn, bitValue);
         if (bitValue) = 1 then
         begin
                 ledPortaOff.Visible := true;
@@ -299,6 +282,25 @@ begin
                 ledPortaOn.Visible := true;
         end;
 
+        cbDBitIn(0, AUXPORT, bitPressaoCompIn, bitValue);
+        if (bitValue) = 1 then
+        begin
+                ledPressaoCompressorOff.Visible := true;
+                ledPressaoCompressorOn.Visible := false;
+        end
+        else
+        begin
+                ledPressaoCompressorOff.Visible := false;
+                ledPressaoCompressorOn.Visible := true;
+        end;
+
+end;
+
+procedure TfrmMain.Diagnstico1Click(Sender: TObject);
+begin
+        tmrMainRead.Enabled := False;
+        frmDiagnostico.tmrDiagRead.Enabled := True;
+        frmDiagnostico.ShowModal;
 end;
 
 end.

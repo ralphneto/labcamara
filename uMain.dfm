@@ -5,8 +5,8 @@ object frmMain: TfrmMain
   Caption = 
     'Câmara de ensaios de capacidade de refrigeração e eficiência ene' +
     'rgética'
-  ClientHeight = 581
-  ClientWidth = 983
+  ClientHeight = 537
+  ClientWidth = 969
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,8 +20,8 @@ object frmMain: TfrmMain
   PixelsPerInch = 96
   TextHeight = 13
   object PanelMain: TPanel
-    Left = 16
-    Top = 16
+    Left = 0
+    Top = 0
     Width = 969
     Height = 537
     Color = clBtnShadow
@@ -30,7 +30,7 @@ object frmMain: TfrmMain
       Left = 24
       Top = 160
       Width = 249
-      Height = 321
+      Height = 329
       Caption = ' Temperaturas: '
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlue
@@ -458,7 +458,7 @@ object frmMain: TfrmMain
       Left = 296
       Top = 392
       Width = 249
-      Height = 89
+      Height = 97
       Caption = 'Outras Medidas:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlue
@@ -467,19 +467,6 @@ object frmMain: TfrmMain
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 4
-      object Label3: TLabel
-        Left = 16
-        Top = 96
-        Width = 94
-        Height = 13
-        Caption = 'Pressão Água 2:'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlue
-        Font.Height = -11
-        Font.Name = 'MS Sans Serif'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
       object Label4: TLabel
         Left = 16
         Top = 128
@@ -521,7 +508,7 @@ object frmMain: TfrmMain
       end
       object ledPortaOff: TImage
         Left = 40
-        Top = 56
+        Top = 48
         Width = 17
         Height = 17
         Picture.Data = {
@@ -537,7 +524,7 @@ object frmMain: TfrmMain
       end
       object ledPortaOn: TImage
         Left = 40
-        Top = 56
+        Top = 48
         Width = 17
         Height = 17
         Picture.Data = {
@@ -554,7 +541,7 @@ object frmMain: TfrmMain
       end
       object lbPorta: TLabel
         Left = 74
-        Top = 60
+        Top = 52
         Width = 31
         Height = 13
         Caption = 'Porta'
@@ -611,6 +598,52 @@ object frmMain: TfrmMain
           8888}
         Visible = False
       end
+      object lbPressaoCompressor: TLabel
+        Left = 74
+        Top = 76
+        Width = 133
+        Height = 13
+        Caption = 'Pressão do Compressor'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clNavy
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object ledPressaoCompressorOff: TImage
+        Left = 40
+        Top = 72
+        Width = 17
+        Height = 17
+        Picture.Data = {
+          07544269746D6170F6000000424DF60000000000000076000000280000001000
+          000010000000010004000000000080000000120B0000120B0000100000000000
+          0000000000000000800000800000008080008000000080008000808000007F7F
+          7F00BFBFBF000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFF
+          FF00888888888888888888888000008888888880088777008888880887000777
+          0888808800000007708880800000000070880870001110007708080001111100
+          07080F000111110007080F000811110008080F70008810007808808000000000
+          808880F8000000088088880F87000788088888800FFF88008888888880000088
+          8888}
+      end
+      object ledPressaoCompressorOn: TImage
+        Left = 40
+        Top = 72
+        Width = 17
+        Height = 17
+        Picture.Data = {
+          07544269746D6170F6000000424DF60000000000000076000000280000001000
+          000010000000010004000000000080000000120B0000120B0000100000000000
+          0000000000000000800000800000008080008000000080008000808000007F7F
+          7F00BFBFBF000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFF
+          FF00888888888888888888888000008888888880088777008888880887000777
+          088880880F9F9F0770888080F00000F07088087F0091100F7708080909191109
+          07080F0F0999910F07080F090F99190908080F7F00FF900F78088080F00000F0
+          808880F80F9F9F088088880F87000788088888800FFF88008888888880000088
+          8888}
+        Visible = False
+      end
       object Edit4: TEdit
         Left = 160
         Top = 120
@@ -637,6 +670,117 @@ object frmMain: TfrmMain
       end
     end
   end
+  object gbEnergia: TGroupBox
+    Left = 573
+    Top = 112
+    Width = 284
+    Height = 97
+    Caption = 'Energia:'
+    Color = clBtnShadow
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 1
+    object lbMedidor1: TLabel
+      Left = 16
+      Top = 36
+      Width = 61
+      Height = 13
+      Caption = 'Medidor 1:'
+    end
+    object lbMedidor2: TLabel
+      Left = 16
+      Top = 60
+      Width = 61
+      Height = 13
+      Caption = 'Medidor 2:'
+    end
+    object lbVAC: TLabel
+      Left = 104
+      Top = 12
+      Width = 25
+      Height = 13
+      Caption = 'VAC'
+    end
+    object lbCorrenteA: TLabel
+      Left = 176
+      Top = 12
+      Width = 9
+      Height = 13
+      Caption = 'A'
+    end
+    object lbKWH: TLabel
+      Left = 224
+      Top = 12
+      Width = 34
+      Height = 13
+      Caption = 'KW/h'
+    end
+    object Edit2: TEdit
+      Left = 88
+      Top = 52
+      Width = 57
+      Height = 21
+      Color = clSilver
+      Enabled = False
+      ReadOnly = True
+      TabOrder = 0
+    end
+    object Edit3: TEdit
+      Left = 88
+      Top = 28
+      Width = 57
+      Height = 21
+      Color = clSilver
+      Enabled = False
+      ReadOnly = True
+      TabOrder = 1
+    end
+    object Edit7: TEdit
+      Left = 152
+      Top = 28
+      Width = 57
+      Height = 21
+      Color = clSilver
+      Enabled = False
+      ReadOnly = True
+      TabOrder = 2
+    end
+    object Edit8: TEdit
+      Left = 152
+      Top = 52
+      Width = 57
+      Height = 21
+      Color = clSilver
+      Enabled = False
+      ReadOnly = True
+      TabOrder = 3
+    end
+    object Edit1: TEdit
+      Left = 216
+      Top = 28
+      Width = 57
+      Height = 21
+      Color = clSilver
+      Enabled = False
+      ReadOnly = True
+      TabOrder = 4
+    end
+    object Edit9: TEdit
+      Left = 216
+      Top = 52
+      Width = 57
+      Height = 21
+      Color = clSilver
+      Enabled = False
+      ReadOnly = True
+      TabOrder = 5
+    end
+  end
   object MainMenu1: TMainMenu
     Left = 400
     Top = 24
@@ -656,6 +800,7 @@ object frmMain: TfrmMain
       Caption = 'Ferramentas'
       object Diagnstico1: TMenuItem
         Caption = 'Diagnóstico'
+        OnClick = Diagnstico1Click
       end
     end
     object Opes1: TMenuItem
@@ -666,6 +811,8 @@ object frmMain: TfrmMain
     end
   end
   object tmrMainRead: TTimer
+    Enabled = False
+    Interval = 100
     OnTimer = tmrMainReadTimer
     Left = 432
     Top = 24
