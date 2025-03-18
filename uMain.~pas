@@ -81,9 +81,16 @@ type
     lbKWH: TLabel;
     Edit1: TEdit;
     Edit9: TEdit;
+    N1: TMenuItem;
+    Empresas1: TMenuItem;
+    Modelos1: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure tmrMainReadTimer(Sender: TObject);
     procedure Diagnstico1Click(Sender: TObject);
+    procedure Sair1Click(Sender: TObject);
+    procedure Empresas1Click(Sender: TObject);
+    procedure Modelos1Click(Sender: TObject);
+    procedure btNovoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -95,13 +102,17 @@ var
 
 implementation
 
-uses uUtils, uDiagnostico;
+uses uUtils, uDiagnostico, uCadEmpresas, uCadModelos, Unit1;
 
 {$R *.DFM}
 
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
-        frmUtils.ConfigurarEntradasESaidas;
+        if frmUtils.ConfigurarEntradasESaidas <> NOERRORS then
+        begin
+                ShowMessage('Erro configurando Módulo de Entradas e Saídas Digitais');
+                Close();
+        end;
 end;
 
 procedure TfrmMain.tmrMainReadTimer(Sender: TObject);
@@ -301,6 +312,27 @@ begin
         tmrMainRead.Enabled := False;
         frmDiagnostico.tmrDiagRead.Enabled := True;
         frmDiagnostico.ShowModal;
+end;
+
+procedure TfrmMain.Sair1Click(Sender: TObject);
+begin
+        tmrMainRead.Enabled := False;
+        Close();
+end;
+
+procedure TfrmMain.Empresas1Click(Sender: TObject);
+begin
+        frmCadEmpresas.ShowModal;
+end;
+
+procedure TfrmMain.Modelos1Click(Sender: TObject);
+begin
+        frmCadModelos.ShowModal;
+end;
+
+procedure TfrmMain.btNovoClick(Sender: TObject);
+begin
+        frmEnsaio.ShowModal;
 end;
 
 end.

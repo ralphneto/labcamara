@@ -1,12 +1,12 @@
 object frmMain: TfrmMain
-  Left = 220
+  Left = 219
   Top = 74
   BorderStyle = bsSingle
   Caption = 
     'Câmara de ensaios de capacidade de refrigeração e eficiência ene' +
     'rgética'
   ClientHeight = 537
-  ClientWidth = 969
+  ClientWidth = 970
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -236,6 +236,7 @@ object frmMain: TfrmMain
       Height = 120
       Caption = 'Novo'
       TabOrder = 1
+      OnClick = btNovoClick
     end
     object gpMedidas: TGroupBox
       Left = 296
@@ -789,12 +790,24 @@ object frmMain: TfrmMain
       object Novo1: TMenuItem
         Caption = 'Novo'
       end
+      object N1: TMenuItem
+        Caption = '-'
+      end
       object Sair1: TMenuItem
         Caption = 'Sair'
+        OnClick = Sair1Click
       end
     end
     object Configuraes1: TMenuItem
       Caption = 'Configurações'
+      object Empresas1: TMenuItem
+        Caption = 'Empresas'
+        OnClick = Empresas1Click
+      end
+      object Modelos1: TMenuItem
+        Caption = 'Modelos'
+        OnClick = Modelos1Click
+      end
     end
     object Ferramentas1: TMenuItem
       Caption = 'Ferramentas'
