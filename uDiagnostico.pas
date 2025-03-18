@@ -186,150 +186,150 @@ procedure TfrmDiagnostico.tmrDiagReadTimer(Sender: TObject);
 var dataValue : Word;
     bitValue  : Integer;
 begin
-        if (cbAIn(0, chTI1, BIP5VOLTS, dataValue) <> 0) then
+        if (cbAIn(1, chTI1, BIP5VOLTS, dataValue) <> 0) then
         begin
-                tmrDiagRead.Enabled := False;
-                ShowMessage('Erro Lendo Temperatura Interna 1!');
+                //tmrDiagRead.Enabled := False;
+                //ShowMessage('Erro Lendo Temperatura Interna 1!');
         end
         else
         begin
                 edTI1.Text := IntToStr(dataValue);
         end;
 
-        if (cbAIn(0, chTI2, BIP5VOLTS, dataValue) <> 0) then
+        if (cbAIn(1, chTI2, BIP5VOLTS, dataValue) <> 0) then
         begin
-                tmrDiagRead.Enabled := False;
-                ShowMessage('Erro Lendo Temperatura Interna 2!');
+                //tmrDiagRead.Enabled := False;
+                //ShowMessage('Erro Lendo Temperatura Interna 2!');
         end
         else
         begin
                 edTI2.Text := IntToStr(dataValue);
         end;
 
-        if (cbAIn(0, chTI3, BIP5VOLTS, dataValue) <> 0) then
+        if (cbAIn(1, chTI3, BIP5VOLTS, dataValue) <> 0) then
         begin
-                tmrDiagRead.Enabled := False;
-                ShowMessage('Erro Lendo Temperatura Interna 3!');
+                //tmrDiagRead.Enabled := False;
+                //ShowMessage('Erro Lendo Temperatura Interna 3!');
         end
         else
         begin
                 edTI3.Text := IntToStr(dataValue);
         end;
 
-        if (cbAIn(0, chTI4, BIP5VOLTS, dataValue) <> 0) then
+        if (cbAIn(1, chTI4, BIP5VOLTS, dataValue) <> 0) then
         begin
-                tmrDiagRead.Enabled := False;
-                ShowMessage('Erro Lendo Temperatura Interna 4!');
+                //tmrDiagRead.Enabled := False;
+                //ShowMessage('Erro Lendo Temperatura Interna 4!');
         end
         else
         begin
                 edTI4.Text := IntToStr(dataValue);
         end;
 
-        if (cbAIn(0, chTTanque, BIP5VOLTS, dataValue) <> 0) then
+        if (cbAIn(1, chTTanque, BIP5VOLTS, dataValue) <> 0) then
         begin
-                tmrDiagRead.Enabled := False;
-                ShowMessage('Erro Lendo Temperatura Tanque!');
+                //tmrDiagRead.Enabled := False;
+                //ShowMessage('Erro Lendo Temperatura Tanque!');
         end
         else
         begin
                 edTanque.Text := IntToStr(dataValue);
         end;
 
-        if (cbAIn(0, chTAE1, BIP5VOLTS, dataValue) <> 0) then
+        if (cbAIn(1, chTAE1, BIP5VOLTS, dataValue) <> 0) then
         begin
-                tmrDiagRead.Enabled := False;
-                ShowMessage('Erro Lendo Temperatura Entrada/Garrafão 1!');
+                //tmrDiagRead.Enabled := False;
+                //ShowMessage('Erro Lendo Temperatura Entrada/Garrafão 1!');
         end
         else
         begin
                 edTE1.Text := IntToStr(dataValue);
         end;
 
-        if (cbAIn(0, chTAE2, BIP5VOLTS, dataValue) <> 0) then
+        if (cbAIn(1, chTAE2, BIP5VOLTS, dataValue) <> 0) then
         begin
-                tmrDiagRead.Enabled := False;
-                ShowMessage('Erro Lendo Temperatura Entrada/Garrafão 2!');
+                //tmrDiagRead.Enabled := False;
+                //ShowMessage('Erro Lendo Temperatura Entrada/Garrafão 2!');
         end
         else
         begin
                 edTE2.Text := IntToStr(dataValue);
         end;
 
-        if (cbAIn(0, chTAS1, BIP5VOLTS, dataValue) <> 0) then
+        if (cbAIn(1, chTAS1, BIP5VOLTS, dataValue) <> 0) then
         begin
-                tmrDiagRead.Enabled := False;
-                ShowMessage('Erro Lendo Temperatura Saída 1!');
+                //tmrDiagRead.Enabled := False;
+                //ShowMessage('Erro Lendo Temperatura Saída 1!');
         end
         else
         begin
                 edTS1.Text := IntToStr(dataValue);
         end;
 
-        if (cbAIn(0, chTAS2, BIP5VOLTS, dataValue) <> 0) then
+        if (cbAIn(1, chTAS2, BIP5VOLTS, dataValue) <> 0) then
         begin
-                tmrDiagRead.Enabled := False;
-                ShowMessage('Erro Lendo Temperatura Saída 2!');
+                //tmrDiagRead.Enabled := False;
+                //ShowMessage('Erro Lendo Temperatura Saída 2!');
         end
         else
         begin
                 edTS2.Text := IntToStr(dataValue);
         end;
 
-        if (cbAIn(0, chUmid, BIP5VOLTS, dataValue) <> 0) then
+        if (cbAIn(1, chUmid, BIP5VOLTS, dataValue) <> 0) then
         begin
-                tmrDiagRead.Enabled := False;
-                ShowMessage('Erro Lendo Umidade!');
+                //tmrDiagRead.Enabled := False;
+                //ShowMessage('Erro Lendo Umidade!');
         end
         else
         begin
                 edUmid.Text := IntToStr(dataValue);
         end;
 
-        if (cbAIn(0, chPressao1, BIP5VOLTS, dataValue) <> 0) then
+        if (cbAIn(1, chPressao1, BIP5VOLTS, dataValue) <> 0) then
         begin
-                tmrDiagRead.Enabled := False;
-                ShowMessage('Erro Lendo Pressão 1!');
+                //tmrDiagRead.Enabled := False;
+                //ShowMessage('Erro Lendo Pressão 1!');
         end
         else
         begin
                 edPressao1.Text := IntToStr(dataValue);
         end;
 
-        if (cbAIn(0, chPressao2, BIP5VOLTS, dataValue) <> 0) then
+        if (cbAIn(1, chPressao2, BIP5VOLTS, dataValue) <> 0) then
         begin
-                tmrDiagRead.Enabled := False;
-                ShowMessage('Erro Lendo Pressão 2!');
+                //tmrDiagRead.Enabled := False;
+                //ShowMessage('Erro Lendo Pressão 2!');
         end
         else
         begin
                 edPressao2.Text := IntToStr(dataValue);
         end;
 
-        if (cbAIn(0, chNivel, BIP5VOLTS, dataValue) <> 0) then
+        if (cbAIn(1, chNivel, BIP5VOLTS, dataValue) <> 0) then
         begin
-                tmrDiagRead.Enabled := False;
-                ShowMessage('Erro Lendo Nível!');
+                //tmrDiagRead.Enabled := False;
+                //ShowMessage('Erro Lendo Nível!');
         end
         else
         begin
                 edNivel.Text := IntToStr(dataValue);
         end;
 
-        if (cbAIn(0, chCel1, BIP5VOLTS, dataValue) <> 0) then
+        if (cbAIn(1, chCel1, BIP5VOLTS, dataValue) <> 0) then
         begin
-                tmrDiagRead.Enabled := False;
-                ShowMessage('Erro Lendo Célula de Carga 1!');
+                //tmrDiagRead.Enabled := False;
+                //ShowMessage('Erro Lendo Célula de Carga 1!');
         end
         else
         begin
                 edCel1.Text := IntToStr(dataValue);
         end;
 
-        if (cbAIn(0, chCel2, BIP5VOLTS, dataValue) <> 0) then
+        if (cbAIn(1, chCel2, BIP5VOLTS, dataValue) <> 0) then
         begin
-                tmrDiagRead.Enabled := False;
-                ShowMessage('Erro Lendo Célula de Carga 2!');
+                //tmrDiagRead.Enabled := False;
+                //ShowMessage('Erro Lendo Célula de Carga 2!');
         end
         else
         begin
@@ -377,161 +377,225 @@ end;
 procedure TfrmDiagnostico.btnSelTempAguaEntOffClick(Sender: TObject);
 begin
         frmUtils.LigarSelecaoTemperatura;
+        btnSelTempAguaEntOff.Visible := False;
+        btnSelTempAguaEntOn.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnUmidificadorOffClick(Sender: TObject);
 begin
         frmUtils.LigarUmidificador;
+        btnUmidificadorOff.Visible := False;
+        btnUmidificadorOn.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnSaidaAgua1OffClick(Sender: TObject);
 begin
         frmUtils.LigarSaidaAgua1;
+        btnSaidaAgua1Off.Visible := False;
+        btnSaidaAgua1On.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnSaidaAgua2OffClick(Sender: TObject);
 begin
         frmUtils.LigarSaidaAgua2;
+        btnSaidaAgua2Off.Visible := False;
+        btnSaidaAgua2On.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnRecirculacaoOffClick(Sender: TObject);
 begin
         frmUtils.LigarRecirculacao;
+        btnRecirculacaoOff.Visible := False;
+        btnRecirculacaoOn.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnProcInternoOffClick(Sender: TObject);
 begin
         frmUtils.LigarProcCompInt;
+        btnProcInternoOff.Visible := False;
+        btnProcInternoOn.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnCirculacaoArOffClick(Sender: TObject);
 begin
         frmUtils.LigarCirculacaoArInt;
+        btnCirculacaoArOff.Visible := False;
+        btnCirculacaoArOn.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnProcTanqueOffClick(Sender: TObject);
 begin
         frmUtils.LigarProcCompTanque;
+        btnProcTanqueOff.Visible := False;
+        btnProcTanqueOn.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnGasQuenteInternoOffClick(Sender: TObject);
 begin
         frmUtils.LigarGasQuenteInt;
+        btnGasQuenteInternoOff.Visible := False;
+        btnGasQuenteInternoOn.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnGasQuenteTanqueOffClick(Sender: TObject);
 begin
         frmUtils.LigarGasQuenteTanque;
+        btnGasQuenteTanqueOff.Visible := False;
+        btnGasQuenteTanqueOn.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnCompressorInternoOffClick(Sender: TObject);
 begin
         frmUtils.LigarCompressorInt;
+        btnCompressorInternoOff.Visible := False;
+        btnCompressorInternoOn.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnCompressorTanqueOffClick(Sender: TObject);
 begin
         frmUtils.LigarCompressorTanque;
+        btnCompressorTanqueOff.Visible := False;
+        btnCompressorTanqueOn.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnBombaAguaOffClick(Sender: TObject);
 begin
         frmUtils.LigarBombaAgua;
+        btnBombaAguaOff.Visible := False;
+        btnBombaAguaOn.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnResistenciaCamara3OffClick(Sender: TObject);
 begin
         frmUtils.LigarResistenciaCamara3;
+        btnResistenciaCamara3Off.Visible := False;
+        btnResistenciaCamara3On.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnResistenciaCamara2OffClick(Sender: TObject);
 begin
         frmUtils.LigarResistenciaCamara2;
+        btnResistenciaCamara2Off.Visible := False;
+        btnResistenciaCamara2On.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnResistenciaTanqueOffClick(Sender: TObject);
 begin
         frmUtils.LigarResistenciaTanque;
+        btnResistenciaTanqueOff.Visible := False;
+        btnResistenciaTanqueOn.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnSelTempAguaEntOnClick(Sender: TObject);
 begin
         frmUtils.DesligarSelecaoTemperatura;
+        btnSelTempAguaEntOn.Visible := False;
+        btnSelTempAguaEntOff.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnUmidificadorOnClick(Sender: TObject);
 begin
         frmUtils.DesligarUmidificador;
+        btnUmidificadorOn.Visible := False;
+        btnUmidificadorOff.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnSaidaAgua1OnClick(Sender: TObject);
 begin
         frmUtils.DesligarSaidaAgua1;
+        btnSaidaAgua1On.Visible := False;
+        btnSaidaAgua1Off.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnSaidaAgua2OnClick(Sender: TObject);
 begin
         frmUtils.DesligarSaidaAgua2;
+        btnSaidaAgua2On.Visible := False;
+        btnSaidaAgua2Off.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnRecirculacaoOnClick(Sender: TObject);
 begin
         frmUtils.DesligarRecirculacao;
+        btnRecirculacaoOn.Visible := False;
+        btnRecirculacaoOff.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnProcInternoOnClick(Sender: TObject);
 begin
         frmUtils.DesligarProcCompInt;
+        btnProcInternoOn.Visible := False;
+        btnProcInternoOff.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnCirculacaoArOnClick(Sender: TObject);
 begin
         frmUtils.DesligarCirculacaoArInt;
+        btnCirculacaoArOn.Visible := False;
+        btnCirculacaoArOff.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnProcTanqueOnClick(Sender: TObject);
 begin
         frmUtils.DesligarProcCompTanque;
+        btnProcTanqueOn.Visible := False;
+        btnProcTanqueOff.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnGasQuenteInternoOnClick(Sender: TObject);
 begin
         frmUtils.DesligarGasQuenteInt;
+        btnGasQuenteInternoOn.Visible := False;
+        btnGasQuenteInternoOff.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnGasQuenteTanqueOnClick(Sender: TObject);
 begin
         frmUtils.DesligarGasQuenteTanque;
+        btnGasQuenteTanqueOn.Visible := False;
+        btnGasQuenteTanqueOff.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnCompressorInternoOnClick(Sender: TObject);
 begin
         frmUtils.DesligarCompressorInt;
+        btnCompressorInternoOn.Visible := False;
+        btnCompressorInternoOff.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnCompressorTanqueOnClick(Sender: TObject);
 begin
         frmUtils.DesligarCompressorTanque;
+        btnCompressorTanqueOn.Visible := False;
+        btnCompressorTanqueOff.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnBombaAguaOnClick(Sender: TObject);
 begin
         frmUtils.DesligarBombaAgua;
+        btnBombaAguaOn.Visible := False;
+        btnBombaAguaOff.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnResistenciaCamara3OnClick(Sender: TObject);
 begin
         frmUtils.DesligarResistenciaCamara3;
+        btnResistenciaCamara3On.Visible := False;
+        btnResistenciaCamara3Off.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnResistenciaCamara2OnClick(Sender: TObject);
 begin
         frmUtils.DesligarResistenciaCamara2;
+        btnResistenciaCamara2On.Visible := False;
+        btnResistenciaCamara2Off.Visible := True;
 end;
 
 procedure TfrmDiagnostico.btnResistenciaTanqueOnClick(Sender: TObject);
 begin
         frmUtils.DesligarResistenciaTanque;
+        btnResistenciaTanqueOn.Visible := False;
+        btnResistenciaTanqueOff.Visible := True;
 end;
 
 procedure TfrmDiagnostico.FormClose(Sender: TObject;

@@ -52,6 +52,7 @@ type
     //Inputs PortC
     function LerChaveEmergencia(): Integer;
     function LerPorta(): Integer;
+    function LerPressaoCompressor(): Integer;
 
     function valueToVoltsStr(dataValue: Word): String;
   end;
@@ -83,6 +84,12 @@ begin
         iErro := cbDConfigPort (boardNum, FirstPortCL, DigitalIn);
         if (iErro <> NOERRORS) then
                 result := iErro;
+
+        if result = NOERRORS then
+        begin
+                cbDOut (boardNum, FirstPortA, 0);
+                cbDOut (boardNum, FirstPortB, 0);
+        end;
 end;
 
 procedure TfrmUtils.LigarSelecaoTemperatura();
@@ -167,98 +174,109 @@ end;
 
 procedure TfrmUtils.LigarGasQuenteInt();
 begin
-        cbDBitOut (boardNum, FirstPortB, bitGasQuenteIntOut, ligar);
+        cbDBitOut (boardNum, FirstPortA, 8+bitGasQuenteIntOut, ligar);
 end;
 
 procedure TfrmUtils.DesligarGasQuenteInt();
 begin
-        cbDBitOut (boardNum, FirstPortB, bitGasQuenteIntOut, desligar);
+        cbDBitOut (boardNum, FirstPortA, 8+bitGasQuenteIntOut, desligar);
 end;
 
 procedure TfrmUtils.LigarGasQuenteTanque();
 begin
-        cbDBitOut (boardNum, FirstPortB, bitGasQuenteTanqueOut, ligar);
+        cbDBitOut (boardNum, FirstPortA, 8+bitGasQuenteTanqueOut, ligar);
 end;
 
 procedure TfrmUtils.DesligarGasQuenteTanque();
 begin
-        cbDBitOut (boardNum, FirstPortB, bitGasQuenteTanqueOut, desligar);
+        cbDBitOut (boardNum, FirstPortA, 8+bitGasQuenteTanqueOut, desligar);
 end;
 
 procedure TfrmUtils.LigarCompressorInt();
 begin
-        cbDBitOut (boardNum, FirstPortB, bitCompIntOut, ligar);
+        cbDBitOut (boardNum, FirstPortA, 8+bitCompIntOut, ligar);
 end;
 
 procedure TfrmUtils.DesligarCompressorInt();
 begin
-        cbDBitOut (boardNum, FirstPortB, bitCompIntOut, desligar);
+        cbDBitOut (boardNum, FirstPortA, 8+bitCompIntOut, desligar);
 end;
 
 procedure TfrmUtils.LigarCompressorTanque();
 begin
-        cbDBitOut (boardNum, FirstPortB, bitCompTanqueOut, ligar);
+        cbDBitOut (boardNum, FirstPortA, 8+bitCompTanqueOut, ligar);
 end;
 
 procedure TfrmUtils.DesligarCompressorTanque();
 begin
-        cbDBitOut (boardNum, FirstPortB, bitCompTanqueOut, desligar);
+        cbDBitOut (boardNum, FirstPortA, 8+bitCompTanqueOut, desligar);
 end;
 
 procedure TfrmUtils.LigarBombaAgua();
 begin
-        cbDBitOut (boardNum, FirstPortB, bitBombaAguaOut, ligar);
+        cbDBitOut (boardNum, FirstPortA, 8+bitBombaAguaOut, ligar);
 end;
 
 procedure TfrmUtils.DesligarBombaAgua();
 begin
-        cbDBitOut (boardNum, FirstPortB, bitBombaAguaOut, desligar);
+        cbDBitOut (boardNum, FirstPortA, 8+bitBombaAguaOut, desligar);
 end;
 
 procedure TfrmUtils.LigarResistenciaCamara3();
 begin
-        cbDBitOut (boardNum, FirstPortB, bitResCamara3Out, ligar);
+        cbDBitOut (boardNum, FirstPortA, 8+bitResCamara3Out, ligar);
 end;
 
 procedure TfrmUtils.DesligarResistenciaCamara3();
 begin
-        cbDBitOut (boardNum, FirstPortB, bitResCamara3Out, desligar);
+        cbDBitOut (boardNum, FirstPortA, 8+bitResCamara3Out, desligar);
 end;
 
 procedure TfrmUtils.LigarResistenciaCamara2();
 begin
-        cbDBitOut (boardNum, FirstPortB, bitResCamara2Out, ligar);
+        cbDBitOut (boardNum, FirstPortA, 8+bitResCamara2Out, ligar);
 end;
 
 procedure TfrmUtils.DesligarResistenciaCamara2();
 begin
-        cbDBitOut (boardNum, FirstPortB, bitResCamara2Out, desligar);
+        cbDBitOut (boardNum, FirstPortA, 8+bitResCamara2Out, desligar);
 end;
 
 procedure TfrmUtils.LigarResistenciaTanque();
 begin
-        cbDBitOut (boardNum, FirstPortB, bitResTanqueOut, ligar);
+        cbDBitOut (boardNum, FirstPortA, 8+bitResTanqueOut, ligar);
 end;
 
 procedure TfrmUtils.DesligarResistenciaTanque();
 begin
-        cbDBitOut (boardNum, FirstPortB, bitResTanqueOut, desligar);
+        cbDBitOut (boardNum, FirstPortA, 8+bitResTanqueOut, desligar);
 end;
 
 function TfrmUtils.LerChaveEmergencia(): Integer;
 var bitValue: Integer;
+    iErr: Integer;
 begin
         bitValue := -1;
-        cbDBitIn (boardNum, FirstPortCL, bitChEmergenciaIn, bitValue);
-        result := bitValue;
+        iErr := cbDBitIn (boardNum, FirstPortA, 16+bitChEmergenciaIn, bitValue);
+        LerChaveEmergencia := bitValue;
 end;
 
 function TfrmUtils.LerPorta(): Integer;
 var bitValue: Integer;
+    iErr: Integer;
 begin
         bitValue := -1;
-        cbDBitIn (boardNum, FirstPortCL, bitPortaIn, bitValue);
-        result := bitValue;
+        iErr := cbDBitIn (boardNum, FirstPortCL, bitPortaIn, bitValue);
+        LerPorta := bitValue;
+end;
+
+function TfrmUtils.LerPressaoCompressor(): Integer;
+var bitValue: Integer;
+    iErr: Integer;
+begin
+        bitValue := -1;
+        iErr := cbDBitIn (boardNum, FirstPortCL, bitPressaoCompIn, bitValue);
+        LerPressaoCompressor := bitValue;
 end;
 
 function TfrmUtils.valueToVoltsStr(dataValue: Word): String;
